@@ -15,3 +15,5 @@ header<-gsub("(^>.*sequence)\\n[ATCG].*","\\1",Sequences)
 seq<-gsub("^>.*sequence\\n([ATCG].*)","\\1",Sequences)
 Sequences<-data.frame(Name=header,Sequence=seq)
 Sequences
+
+Sequences <- gsub("\n", "", Sequences$Sequence)
