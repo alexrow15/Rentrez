@@ -11,4 +11,7 @@ Sequences <- strsplit(Bburg, split = "\n\n")
 
 Sequences<-unlist(Sequences)
 
-
+header<-gsub("(^>.*sequence)\\n[ATCG].*","\\1",Sequences)
+seq<-gsub("^>.*sequence\\n([ATCG].*)","\\1",Sequences)
+Sequences<-data.frame(Name=header,Sequence=seq)
+Sequences
