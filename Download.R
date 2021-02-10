@@ -8,4 +8,7 @@ Bburg<-entrez_fetch(db = "nuccore", id = ncbi_ids, rettype = "fasta") #entrez_fe
 #the rettype is fasta, so a fasta type will be found and summarized 
 
 Sequences <- strsplit(Bburg, split = "\n\n")
-Sequences
+
+Sequences<-unlist(Sequences)
+
+
