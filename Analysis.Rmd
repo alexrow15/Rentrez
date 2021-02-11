@@ -13,3 +13,36 @@ knitr::opts_chunk$set(echo = TRUE)
 sequence <- read.csv("Sequences.csv")
 sequence
 ```
+
+
+
+```{r}
+counter <- 1
+for (i in sequence[,3]){
+  spl <- strsplit(i, split = "")
+  for (k in 1:length(spl[[1]])){
+      if (spl[[1]][k] == "A"){
+        countA <- countA + 1
+      }
+      if (spl[[1]][k] == "C"){
+        countC <- countC + 1
+      }
+      if (spl[[1]][k] == "G"){
+        countG <- countG + 1
+      }
+      if (spl[[1]][k] == "T"){
+        countT <- countT + 1
+      }
+  }
+  print(paste("The number of Adenine nucleotides in sequence", counter, "is", countA))
+  print(paste("The number of Cytosine nucleotides in sequence", counter, "is", countC))
+  print(paste("The number of Guanine nucleotides in sequence", counter, "is", countG))
+  print(paste("The number of Thymine nucleotides in sequence", counter, "is", countT))
+  countA <- 0
+  countC <- 0
+  countG <- 0
+  countT <- 0
+  counter <- counter + 1 
+}
+```
+
