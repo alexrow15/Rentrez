@@ -12,12 +12,17 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 sequence <- read.csv("Sequences.csv")
 sequence
+library(dplyr)
 ```
 
 
 
 ```{r}
 counter <- 1
+countA <- 0
+countC <- 0
+countG <- 0
+countT <- 0
 for (i in sequence[,3]){
   spl <- strsplit(i, split = "")
   for (k in 1:length(spl[[1]])){
@@ -33,16 +38,28 @@ for (i in sequence[,3]){
       if (spl[[1]][k] == "T"){
         countT <- countT + 1
       }
+    
   }
   print(paste("The number of Adenine nucleotides in sequence", counter, "is", countA))
   print(paste("The number of Cytosine nucleotides in sequence", counter, "is", countC))
   print(paste("The number of Guanine nucleotides in sequence", counter, "is", countG))
   print(paste("The number of Thymine nucleotides in sequence", counter, "is", countT))
+  
   countA <- 0
   countC <- 0
   countG <- 0
   countT <- 0
   counter <- counter + 1 
 }
+
 ```
+```{r}
+TableSeq <- c(154, 82, 131, 114, 155, 81, 131, 114, 154, 81, 131, 115)
+NucleotideNumb <- matrix(TableSeq, ncol = 4, byrow = TRUE)
+colnames(NucleotideNumb) <- c("A", "C", "G", "T")
+rownames(NucleotideNumb) <- c("HQ433694.1", "HQ433692.1", "HQ433691.1")
+NucleotideNumb <- as.table(NucleotideNumb)
+print(NucleotideNumb)
+```
+
 
