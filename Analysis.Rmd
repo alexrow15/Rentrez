@@ -62,7 +62,8 @@ NucleotideNumb <- as.table(NucleotideNumb)
 print(NucleotideNumb)
 ```
 
-![Bacteria Image](bacteria.jpg)
+![Bacteria Image](~/Desktop/Rentrez/bacteria.jpg)
+
 A general description of the bacteria can be [Further explored](https://en.wikipedia.org/wiki/Borrelia_burgdorferi#:~:text=Borrelia%20burgdorferi%20is%20a%20bacterial,known%20to%20cause%20the%20disease).) using the link. 
 
 
@@ -70,19 +71,15 @@ A general description of the bacteria can be [Further explored](https://en.wikip
 GCSeq1 <- round(((NucleotideNumb[1,2] + NucleotideNumb[1,3])/sum(NucleotideNumb[1,]))*100, digits = 1)
 GCSeq2 <- round(((NucleotideNumb[2,2] + NucleotideNumb[2,3])/sum(NucleotideNumb[2,]))*100, digits = 1)
 GCSeq3 <- round(((NucleotideNumb[3,2] + NucleotideNumb[3,3])/sum(NucleotideNumb[3,]))*100, digits = 1)
-GCcontent <- c(GCSeq1, GCSeq2, GCSeq3)
-GCcontent
-seqID <- c("HQ433694.1", "HQ433692.1", "HQ433691.1")
-GCContentTable <- matrix(GCcontent, ncol = 1)
-rownames(GCContentTable) <- seqID
-GCContentTable <- as.table(GCContentTable)
-str(GCContentTable)
+GCSeq1 <- print(paste(GCSeq1,"%"))
+GCSeq2 <- print(paste(GCSeq2,"%"))
+GCSeq3 <- print(paste(GCSeq3,"%"))
 
+TableContents <- c("HQ433694.1", GCSeq1, "HQ433692.1",GCSeq2,"HQ433691.1", GCSeq3 )
+FinalTable <- matrix(TableContents, ncol = 2, byrow = TRUE)
+colnames(FinalTable) <- c("Sequence IDs", "GC Content")
+FinalTable
 ```
 
-
-```{r}
-
-```
 
 
