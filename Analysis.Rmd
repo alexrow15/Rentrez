@@ -66,5 +66,23 @@ print(NucleotideNumb)
 A general description of the bacteria can be [Further explored](https://en.wikipedia.org/wiki/Borrelia_burgdorferi#:~:text=Borrelia%20burgdorferi%20is%20a%20bacterial,known%20to%20cause%20the%20disease).) using the link. 
 
 
+```{r}
+GCSeq1 <- round(((NucleotideNumb[1,2] + NucleotideNumb[1,3])/sum(NucleotideNumb[1,]))*100, digits = 1)
+GCSeq2 <- round(((NucleotideNumb[2,2] + NucleotideNumb[2,3])/sum(NucleotideNumb[2,]))*100, digits = 1)
+GCSeq3 <- round(((NucleotideNumb[3,2] + NucleotideNumb[3,3])/sum(NucleotideNumb[3,]))*100, digits = 1)
+GCcontent <- c(GCSeq1, GCSeq2, GCSeq3)
+GCcontent
+seqID <- c("HQ433694.1", "HQ433692.1", "HQ433691.1")
+GCContentTable <- matrix(GCcontent, ncol = 1)
+rownames(GCContentTable) <- seqID
+GCContentTable <- as.table(GCContentTable)
+str(GCContentTable)
+
+```
+
+
+```{r}
+
+```
 
 
