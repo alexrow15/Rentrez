@@ -61,9 +61,12 @@ NucleotideNumb <- as.table(NucleotideNumb)
 print(NucleotideNumb)
 ```
 
-![Bacteria Image](~/Desktop/Rentrez/bacteria.jpg)
 
-A general description of the bacteria can be [Further explored](https://en.wikipedia.org/wiki/Borrelia_burgdorferi#:~:text=Borrelia%20burgdorferi%20is%20a%20bacterial,known%20to%20cause%20the%20disease).) using the link. 
+
+A general description of the bacteria can be [Further explored](https://en.wikipedia.org/wiki/Borrelia_burgdorferi#:~:text=Borrelia%20burgdorferi%20is%20a%20bacterial,known%20to%20cause%20the%20disease)
+
+![View](bacteria.jpg)
+
 
 
 ```{r}
